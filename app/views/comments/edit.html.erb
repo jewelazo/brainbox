@@ -1,0 +1,17 @@
+<div>
+<%= form_with  model:@comment do |form| %>
+        <div class="form-tweeter">
+            <div>
+                <%= form.text_field :body ,placeholder: "Remember to thing before write..." %>
+                <% if @comment.errors.messages[:body].any? %>
+                    <span class="content--sm input__error-message">
+                        <%= @comment.errors.messages[:body].join(", ")%>
+                    </span>
+                <% end %>
+                <div class="tweet-button">
+                    <%= form.submit "Update" %>
+                </div>
+            </div>
+        </div>      
+<% end %>
+</div>

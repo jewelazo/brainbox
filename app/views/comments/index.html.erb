@@ -1,0 +1,14 @@
+<div>
+    <% @comments.each do |comment| %>
+       <p><%= comment.body %></p>
+       <div>
+            <%= link_to "edit" , edit_comment_path(comment)  %>
+            <div>
+                <%= button_to comment_path(comment), method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } do %>
+                    <%= "delete" %>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+
+</div>

@@ -1,0 +1,28 @@
+<div>
+<%= form_with  model:@comment_new do |form| %>
+        <div class="form-tweeter">
+            <div>
+                <%= form.text_field :body ,placeholder: "Remember to thing before write..." %>
+                <% if @comment_new.errors.messages[:body].any? %>
+                    <span class="content--sm input__error-message">
+                        <%= @comment_new.errors.messages[:body].join(", ")%>
+                    </span>
+                <% end %>
+                <div class="tweet-button">
+                    <%= form.submit "Comment" %>
+                </div>
+            </div>
+        </div>      
+<% end %>
+</div>
+
+<div>
+    <% @users.each do |user| %>
+        <div>
+            <span><%= user.username %></span>
+            <span><%= user.comments_count %></span>
+            <%= link_to "comments" ,user_comments_path(user) %>
+        </div>
+    <% end %>
+
+</div>
