@@ -11,6 +11,22 @@
   </head>
 
   <body>
+    <div class="navbar-tweeter">
+      <% if user_signed_in? %>
+          <div>
+            <%= button_to destroy_user_session_path, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } do %>
+                <%= 'Logout' %>
+            <% end %>
+          </div>
+      <% else %>
+        <%= link_to 'Login', new_user_session_path, class: "session-tweet" %>
+        <%= link_to 'SignUp', new_user_registration_path, class: "session-tweet" %>
+      <% end %>
+    </div>
+    <div>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
     <%= yield %>
   </body>
 </html>

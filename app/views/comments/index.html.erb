@@ -1,7 +1,8 @@
 <div>
     <% @comments.each do |comment| %>
        <p><%= comment.body %></p>
-       <div>
+       <% if current_user && current_user.comments.include?(comment)%>
+        <div>
             <%= link_to "edit" , edit_comment_path(comment)  %>
             <div>
                 <%= button_to comment_path(comment), method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } do %>
@@ -9,6 +10,7 @@
                 <% end %>
             </div>
         </div>
+        <% end %>
     <% end %>
 
 </div>

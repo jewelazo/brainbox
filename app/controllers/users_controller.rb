@@ -3,4 +3,5 @@ class UsersController < ApplicationController
         @users=User.all
         @comment_new=Comment.new
     end
+
 end
