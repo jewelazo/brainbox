@@ -10,7 +10,8 @@ class CommentsController < ApplicationController
     def create
         @users=User.all
         @comment_new=Comment.new(comment_params)
-        @comment_new.user=User.first
+        # @comment_new.user=User.first
+        @comment_new.user=current_user
         respond_to do |format|
             if @comment_new.save
                 format.html { redirect_to root_path, notice: "Comment was successfully created." }
