@@ -1,0 +1,27 @@
+.comments_by_user{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+.comments-options{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.comments-options button{
+    all: unset;
+}
+.options-icons{
+    display: flex;
+    gap:5px
+}
+.back{
+    display: grid;
+    text-decoration: none;
+    color: black;
+    justify-items: center;
+}
+.back:hover{
+    color:blue
+}

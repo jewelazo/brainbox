@@ -1,0 +1,75 @@
+.navbar{
+    width: 600px;
+    height: 50px;
+    background-color: rgb(0, 23, 128);
+    margin: 0 auto;
+    display: grid;
+    align-items: center;
+}
+
+.create-session{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+.create-session a{
+    text-decoration: none;
+    cursor: pointer;
+    color:black;
+}
+.create-session button{
+    all:unset;
+    cursor: pointer;
+}
+.create-session a:hover,button:hover{
+    color: white
+}
+.title-home{
+    width: 600px;
+    background-color: aquamarine;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 2px;
+
+}
+.form-comment-container{
+    width: 600px;
+    margin: 0 auto;
+}
+.form-comment input{
+    width: 500px;
+    display: block;
+    margin: 0 auto;
+    border: none;
+    border-radius: 10px;
+    border: solid 0.5px;
+    padding: 10px;
+}
+.comment-button{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.comment-button > input{
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    background: #1DA1F2;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 100px;
+}
+.user-comment{
+    display: flex;
+    gap:10px;
+    justify-content: center;
+}
+.flash-alerts{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+/* .user-list{
+
+} */
