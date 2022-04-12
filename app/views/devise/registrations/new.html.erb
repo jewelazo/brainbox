@@ -1,10 +1,11 @@
+<div class="session-container">
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, data: { turbo: false }, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div>
-    <%= f.label :username %><br />
+  <div class="field-username">
+    <%= f.label :username %>
     <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
   </div>
   <div>
@@ -16,16 +17,16 @@
     <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
+  <div class="field email-field">
+    <%= f.label :email %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field">
+  <div class="field field-password">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+    <% end %>
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
@@ -36,7 +37,9 @@
 
   <div class="actions">
     <%= f.submit "Sign up" %>
+    <%= render "devise/shared/links" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
+</div>

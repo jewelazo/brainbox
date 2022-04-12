@@ -2,8 +2,8 @@ class CommentsController < ApplicationController
     before_action :set_comment, only: %i[edit update destroy]
 
     def index
-        user=User.find_by(id:params[:user_id])
-        @comments=user.comments
+        @user=User.find_by(id:params[:user_id])
+        @comments=@user.comments
 
     end
 
