@@ -25,3 +25,52 @@
 .back:hover{
     color:blue
 }
+
+.form-session input{
+    border: 1px solid #5B7083;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 4px 8px;
+}
+.actions{
+    margin-top: 10px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+.actions input{
+    background: #1DA1F2;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    border-radius: 100px;
+    color: white;
+    font-weight: 400;
+    
+}
+.actions input:hover{
+    background-color: #1d92f2;
+    color: black;
+}
+.actions a{
+    margin-top: 5px;
+    text-decoration: none;
+    color:  #1DA1F2;
+}
+.actions a:hover{
+    color:  #2b1df2;
+}
+
+.field em{
+    font-size: 11px;
+}
+.field-password input{
+    display: block;
+}
+.session-container form{
+    display: grid;
+    justify-items: center;
+}
+.email-field,.field-username{
+    display: grid;
+}

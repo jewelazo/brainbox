@@ -26,7 +26,10 @@
           </div>
         <% end %>
       </div>
-      <div class="title-home">Home</div>
+      <%= link_to root_path do %>
+        <div class="title-home">Home</div>
+      <% end %>
+     
       <div class="flash-alerts">
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>

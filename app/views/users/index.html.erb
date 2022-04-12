@@ -24,7 +24,14 @@
     <div class="user-container">
         <% @users.each do |user| %>
             <div class="user-comment">
-                <span>- @<%= user.username %> has <%= user.comments_count %> comments</span>
+                <div>- @<%= user.username %> has
+                <span>
+                <% if user.comments_count==1 %>
+                    <%= user.comments_count %><span> comment</span>
+                <% else %>
+                    <%= user.comments_count || 0 %><span> comments</span>
+                <% end %>
+                </div>
                 <%= link_to image_tag("/images/icons/comment-icon.svg") ,user_comments_path(user) %>
             </div>
         <% end %>
