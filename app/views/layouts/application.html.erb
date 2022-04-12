@@ -11,6 +11,30 @@
   </head>
 
   <body>
+    <div>
+      <div class="navbar">
+        <% if user_signed_in? %>
+            <div class="create-session">
+              <%= button_to destroy_user_session_path, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } do %>
+                  <%= 'Logout' %>
+              <% end %>
+            </div>
+        <% else %>
+          <div class="create-session">
+            <div><%= link_to 'Login', new_user_session_path, class: "session-tweet" %></div>
+            <div><%= link_to 'SignUp', new_user_registration_path, class: "session-tweet" %></div>
+          </div>
+        <% end %>
+      </div>
+      <%= link_to root_path do %>
+        <div class="title-home">Home</div>
+      <% end %>
+     
+      <div class="flash-alerts">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>

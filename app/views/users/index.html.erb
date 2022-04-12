@@ -1,0 +1,41 @@
+<div class="users-list">
+    <div>
+    <% if current_user %>
+        <%= form_with  model:@comment_new do |form| %>
+                <div class="form-comment-container">
+                    <div>
+                        <div class="form-comment">
+                        <%= form.text_field :body ,placeholder: "Remember to thing before write..." %>
+                        <% if @comment_new.errors.messages[:body].any? %>
+                            <span class="content--sm input__error-message">
+                                <%= @comment_new.errors.messages[:body].join(", ")%>
+                            </span>
+                        <% end %>
+                        </div>
+                        <div class="comment-button">
+                            <%= form.submit "Comment" %>
+                        </div>
+                    </div>
+                </div>      
+        <% end %>
+    <% end %>
+    </div>
+    <hr/>
+    <div class="user-container">
+        <% @users.each do |user| %>
+            <div class="user-comment">
+                <div>- @<%= user.username %> has
+                <span>
+                <% if user.comments_count==1 %>
+                    <%= user.comments_count %><span> comment</span>
+                <% else %>
+                    <%= user.comments_count || 0 %><span> comments</span>
+                <% end %>
+                </div>
+                <%= link_to image_tag("/images/icons/comment-icon.svg") ,user_comments_path(user) %>
+            </div>
+        <% end %>
+
+    </div>
+
+</div>

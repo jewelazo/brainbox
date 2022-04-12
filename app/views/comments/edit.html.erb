@@ -1,0 +1,21 @@
+<div>
+<%= form_with  model:@comment do |form| %>
+        <div class="form-comment-container">
+            <div>
+                <div class="form-comment">
+                <%= form.text_field :body ,placeholder: "Remember to thing before write..." %>
+                <% if @comment.errors.messages[:body].any? %>
+                    <span class="content--sm input__error-message">
+                        <%= @comment.errors.messages[:body].join(", ")%>
+                    </span>
+                <% end %>
+                </div>
+                <div class="comment-button">
+                    <%= form.submit "Update" %>
+                </div>
+                <%= link_to "back",user_comments_path(@comment.user),class: "back"%>
+            </div>
+        </div>      
+<% end %>
+
+</div>

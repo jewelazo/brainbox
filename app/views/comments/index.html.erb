@@ -1,0 +1,26 @@
+<div class="comments_by_user">
+    <div>
+        <p>User: @<%=@user.username %></p>
+    </div>
+    <div>Comments:</div>
+    <div style="width:600px">
+    <% @comments.each do |comment| %>
+        <div class="comments-options">
+            <p>- <%= comment.body %></p>
+            <div class="options-icons">
+                <% if current_user && current_user.comments.include?(comment)%>
+                    <div>
+                        <%= link_to image_tag("/images/icons/edit.svg") , edit_comment_path(comment)  %>
+                    </div>
+                    <div>
+                        <%= button_to comment_path(comment), method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } do %>
+                            <%= image_tag("/images/icons/trash.svg") %>
+                        <% end %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+    </div>
+
+</div>
