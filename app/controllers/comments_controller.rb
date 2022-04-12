@@ -1,16 +1,17 @@
 class CommentsController < ApplicationController
     before_action :set_comment, only: %i[edit update destroy]
 
+    # GET /users/:user_id/comments
     def index
         @user=User.find_by(id:params[:user_id])
         @comments=@user.comments
 
     end
 
+    #POST /comments
     def create
         @users=User.all
         @comment_new=Comment.new(comment_params)
-        # @comment_new.user=User.first
         @comment_new.user=current_user
         respond_to do |format|
             if @comment_new.save
@@ -21,8 +22,10 @@ class CommentsController < ApplicationController
         end
     
     end
-    
+    # GET /comments/:id/edit
     def edit; end
+
+    # PATCH	/comments/:id
     def update
         respond_to do |format|
             if @comment.update(comment_params)
@@ -33,7 +36,7 @@ class CommentsController < ApplicationController
         end
 
     end
-
+    # DELETE /comments/:id
     def destroy
 
         @comment.destroy
